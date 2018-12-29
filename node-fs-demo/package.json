@@ -1,0 +1,24 @@
+{
+  "name": "node-koa",
+  "version": "1.0.0",
+  "description": "node & koa 尝试 ",
+  "main": "app.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "koa",
+    "node"
+  ],
+  "author": "henyulee",
+  "license": "ISC",
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "nunjucks": "^3.1.6"
+  }
+}
