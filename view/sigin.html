@@ -1,0 +1,70 @@
+{% extends "base.html" %} {% block main %}
+<div class="container" id="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>WebSocket Chat</h1>
+            <div class="alert alert-danger">Please sign in before join the room.
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-user"></span> Please sign in</h3>
+                </div>
+                <div class="panel-body">
+                    <form action="/sigin" method="post">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" name="name" class="form-control" placeholder="你的昵称" value="{{ name }}">
+                            <p class="help-block">Your user name</p>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Sign In</button>
+                        <span class="btn btn-primary" @click="testAPI">test API</span>
+                    </form>
+                </div>
+                <ul>
+                  <li v-for="(item, idx) in userlist">姓名：{{ item.name }},ID:{{ item.id }}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title"><span class="glyphicon glyphicon-hd-video"></span> Video training</h3>
+                </div>
+                <div class="panel-body">
+                    <video width="100%" controls="controls">
+                        <source src="https://github.com/michaelliao/learn-javascript/raw/master/video/vscode-nodejs.mp4">
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+  let vm = new Vue({
+    el: '#container',
+    data (){
+      return {
+        userlist:[]
+      }
+    },
+    methods:{
+      testAPI () {
+        let self = this;
+        $.ajax({
+          url: 'api/users/list',
+          success: function(rs){
+            self.userlist = rs.data.list
+          }
+        })
+      }
+    }
+  })
+</script>
+
+
+{% endblock %}

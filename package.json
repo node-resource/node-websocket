@@ -1,0 +1,34 @@
+{
+  "name": "koa-nunjucks-bootstrap",
+  "version": "1.0.0",
+  "description": "koa 2 example with nunjucks as view,with bootstrap as css",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --use_strict app.js"
+  },
+  "keywords": [
+    "koa",
+    "async",
+    "nunjucks",
+    "bootstrap"
+  ],
+  "author": "henyulee",
+  "license": "",
+  "repository": {},
+  "dependencies": {
+    "koa": "2.0.0",
+    "koa-bodyparser": "3.2.0",
+    "koa-json": "^2.0.2",
+    "koa-onerror": "^4.1.0",
+    "koa-router": "7.0.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^3.0.6",
+    "mime": "1.3.4",
+    "mysql2": "^1.6.4",
+    "mz": "2.4.0",
+    "nodemon": "^1.18.9",
+    "nunjucks": "2.4.2",
+    "sequelize": "^4.42.0",
+    "ws": "^6.1.2"
+  }
+}
